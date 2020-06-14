@@ -97,10 +97,41 @@
             </el-form-item>
 
             <el-form-item label="商品图片" :label-width="LabelWidth">
-                  <el-image
-                    style="width: 100px; height: 100px"
+                 <el-upload
+                 class="shopimg"
+                :action="'http://127.0.0.1:5000/goods/goods_img_upload'"
+                 list-type="picture-card"
+                :on-success="handleImgSuccess"
+          >
+            <img
+              v-if="goodEdit.imgUrl"
+              :src="'http://127.0.0.1:5000/upload/imgs/goods_img/' + img"
+              width="142"
+              height="142"
+              class="avatar"
+            /> 
+            <i v-else class="el-icon-plus"></i>
+          </el-upload> 
+
+
+
+                 
+                   <!-- 图片上传 -->
+          <!-- <el-upload
+            class="shopimg"
+            :action="'http://127.0.0.1:5000/goods/goods_img_upload'"
+            list-type="picture-card"
+            :on-success="handleImgSuccess"
+           
+          >
+            <i class="el-icon-plus"></i>
+             <el-image
                     :src="'http://127.0.0.1:5000/upload/imgs/goods_img/'+img"
+                     width="142"
+              height="142"
                   ></el-image>
+          </el-upload>
+ -->
             </el-form-item>
 
              <el-form-item label="商品描述" :label-width="LabelWidth">
@@ -160,6 +191,11 @@ export default {
       this.currentPage = val;
       //发送请求获取当前列表
       this.goodslist();
+    },
+    //修改图片
+    handleImgSuccess(res) {
+     this.goodEdit.imgUrl = res.imgUrl;
+     
     },
     //编辑商品
     goodsEdit(row) {

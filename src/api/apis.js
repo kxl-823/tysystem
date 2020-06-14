@@ -10,6 +10,8 @@ export const SHOP_IMGS = API_SERVE+'/shop/upload/'
 //店铺图片地址
 export const UPLOAD_SHOP= API_SERVE+'/upload/shop/'
 
+//商品图片列表修改图
+
 
 //登录接口
 //account:用户名   password:密码

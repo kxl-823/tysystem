@@ -276,7 +276,7 @@ export default {
     },
     //查询
     onSubmit() {
-      //this.queryParam.date = this.queryParam.date.toString();
+      this.queryParam.date = JSON.stringify(this.queryParam.date);
       API_ORDER_SEARCH(this.queryParam).then(res => {
         this.tableData = res.data.data;
         this.total = res.data.total;

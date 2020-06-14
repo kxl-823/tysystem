@@ -9,7 +9,7 @@
     <div class="table_text">
       <el-form ref="form" :model="store" label-width="80px">
           <el-form-item label="店铺 ID">
-          <el-input v-model="store.id" class="input_name"></el-input>
+          <el-input v-model="store.id" class="input_name" disabled></el-input>
         </el-form-item>
         <el-form-item label="店铺名称">
           <el-input v-model="store.name" class="input_name"></el-input>
@@ -45,6 +45,7 @@
             :action="shopImgs"
             list-type="picture-card"
             :file-list="fileList"
+            :on-remove="handleRemove"
             :on-success="handleImgSuccess"
            
           >
@@ -73,7 +74,7 @@
         </el-form-item>
 
         <el-form-item label="店铺评分">
-          <el-input v-model="store.score" class="input_name"></el-input>
+          <el-input v-model="store.score" class="input_name" disabled></el-input>
         </el-form-item>
 
         <el-form-item label="销量">
@@ -137,6 +138,14 @@ export default {
     });
   },
   methods: {
+    //删除图片
+    handleRemove(file){
+      let url = file.url.split("/");
+      let index = this.store.pics.indexOf(url[(url.length-1)]);
+      console.log(index);
+      
+      this.store.pics.splice(index,1);
+    },
     //头像上传成功
     handleAvatarSuccess(res) {
      this.store.avatar = res.imgUrl

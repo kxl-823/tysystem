@@ -13,49 +13,6 @@
           </div>
         </el-col>
       </el-row>
-    <!--   
-      <el-row :gutter="20">
-        <el-col :span="6">
-          <div class="grid-content bg-purple top_text">
-            <span class="iconfont icon-dingdan11" style="color:#1296DB;font-size:76px"></span>
-            <div>
-              <p class="toptext">总订单</p>
-              <p>{{totalOrder}}</p>
-            </div>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="grid-content bg-purple top_text">
-            <span class="iconfont icon-edu" style="color:#D4237A;font-size:83px;font-weight: bold"></span>
-            <div>
-              <p class="toptext">总销售额</p>
-              <p>{{totalAmount}}</p>
-            </div>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="grid-content bg-purple top_text">
-            <span
-              class="iconfont icon-dingdan"
-              style="color:#1296DB;font-size:74px;font-weight: bold;"
-            ></span>
-            <div>
-              <p class="toptext">今日订单数</p>
-              <p>{{todayOrder}}</p>
-            </div>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="grid-content bg-purple top_text">
-            <span class="iconfont icon-jine" style="color:#1AFA29;font-size:76px;font-weight: bold;"></span>
-            <div>
-              <p class="toptext">今日销售额</p>
-              <p>{{totayAmount}}</p>
-            </div>
-          </div>
-        </el-col>
-
-      </el-row> -->
     </div>
     <div id="mian_data"></div>
   </div>
